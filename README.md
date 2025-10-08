@@ -1,1 +1,1 @@
-# React + TypeScript + Vite + Vitest + Biome
+# React + TypeScript + Vite + Vitest + Biome + NVM
