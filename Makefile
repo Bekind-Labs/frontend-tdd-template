@@ -7,17 +7,20 @@ RM=rm -f
 
 all:
 
-build:
+build: ci
 	$(NPM) run build
 
-lint:
+lint: ci
 	$(NPM) run lint
 
-run:
+run: ci
 	$(NPM) run dev
 
-test:
+test: ci
 	$(NPM) run test
+
+ci:
+	$(NPM) ci
 
 clean:
 	-$(RM) -r ./dist
