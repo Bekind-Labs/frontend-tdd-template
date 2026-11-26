@@ -1,9 +1,3 @@
-import { expect, afterEach } from 'vitest'
-import { cleanup } from '@testing-library/react'
-import * as matchers from '@testing-library/jest-dom/matchers'
-
-expect.extend(matchers)
-
-afterEach(() => {
-	cleanup()
-})
+// Adds jest-dom matchers (toBeInTheDocument, etc.) to Vitest's expect.
+// DOM cleanup after each test is automatic because `globals: true` is set.
+import "@testing-library/jest-dom/vitest";

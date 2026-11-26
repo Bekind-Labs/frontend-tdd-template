@@ -1,22 +1,22 @@
-import { defineConfig } from 'vitest/config'
-import react from '@vitejs/plugin-react'
+import react from "@vitejs/plugin-react";
+import { defineConfig } from "vitest/config";
 
-const BASE_URL = process.env.BASE_URL || 'http://localhost:8080/'
+const BASE_URL = process.env.BASE_URL || "http://localhost:8080/";
 
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [react()],
-  test: {
-    globals: true,
-    environment: 'jsdom',
-    setupFiles: './vitest.setup.ts',
-  },
-  server: {
-    proxy: {
-      '/todos': {
-        target: BASE_URL,
-        changeOrigin: true,
-      }
-    }
-  }
-})
+	plugins: [react()],
+	test: {
+		globals: true,
+		environment: "jsdom",
+		setupFiles: ["./vitest.setup.ts"],
+	},
+	server: {
+		proxy: {
+			"/api/todos": {
+				target: BASE_URL,
+				changeOrigin: true,
+			},
+		},
+	},
+});
